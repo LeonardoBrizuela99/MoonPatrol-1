@@ -8,7 +8,7 @@ struct SpaceShips
 extern SpaceShips spaceShip;
 
 void initializeSpaceShip();
-void MoveSpaceShip(SpaceShips& spaceShip);
+void MoveSpaceShip(/*SpaceShips& spaceShip*/);
 void CollitionSpaceship();
 
 

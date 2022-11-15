@@ -75,13 +75,14 @@ void checkQuit()
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && CheckCollisionPointRec(GetMousePosition(), Texto[2].backgroundBttn))
 	{
 		menu = MenuScenes::Quit;
+
 	}
 }
 
 void drawButtons()
 {
 	BeginDrawing();
-	ClearBackground(RAYWHITE);
+	ClearBackground(BEIGE);
 	drawPlay();
 	drawCredits();
 	drawQuit();
@@ -101,19 +102,22 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 		break;
 
 	case MenuScenes::Play:
+		
+			Update();
+			Drawing(background, foreground);
 
-		Update();
-		Drawing(background, foreground);
 
 		break;
 
 	case MenuScenes::Credits:
 
-
+		UpdateMenu();
+		DrawText("CODIGO:", GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 + 250, 20, WHITE);
 		break;
 
 	case MenuScenes::Quit:
 
+		
 
 		break;
 

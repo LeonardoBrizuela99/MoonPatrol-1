@@ -10,13 +10,13 @@ void Update()
 {
 	framesCounter++;
 	moveParallax();
-	hasCollided();
+	/*hasCollided();*/
 	loseCondition();
 	playerMovement();
 	playerInput();
 	moveObstacle();
 	playerCollition(car, obstacle);
-	MoveSpaceShip(spaceShip);
+	MoveSpaceShip(/*spaceShip*/);
 }
 
 void Drawing(Texture2D& background, Texture2D& foreground) 
@@ -45,20 +45,21 @@ void UpdateMenu()
 	checkQuit();
 }
 
-void hasCollided()
-{
-	if (((framesCounter / 240) % 2) == 1)
-	{
-		car.canCollide = true;
-		framesCounter = 0;
-	}
 
-	if (CheckCollisionRecs(car.rec, obstacle.rec) && car.canCollide == true)
-	{
-		car.canCollide = false;
-		
-	}
-}
+//void hasCollided()
+//{
+//	if (((framesCounter / 240) % 2) == 1)
+//	{
+//		car.canCollide = true;
+//		framesCounter = 0;
+//	}
+//
+//	if (CheckCollisionRecs(car.rec, obstacle.rec) && car.canCollide == true)
+//	{
+//		car.canCollide = false;
+//		
+//	}
+//}
 
 void initializeAll()
 {

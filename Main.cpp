@@ -18,7 +18,6 @@ Parallax backGround[2];
 
 float scrollingBack;
 float scrollingMid;
-
 int framesCounter;
 
 int main(void)
@@ -32,9 +31,11 @@ int main(void)
 	
 	SetTargetFPS(60);
 
-	while (!WindowShouldClose())
+	while (!WindowShouldClose()/*&& quit==true*/)
 	{
-		RunGame(background, foreground);
+		
+			RunGame(background, foreground);
+		
 	}
 
 	// De-Initialization
