@@ -12,8 +12,9 @@ struct Game
 extern int framesCounter;
 
 void Update();
-void Drawing(); 
-void play();
-void RunGame();
+void UpdateMenu();
+void Drawing(Texture2D& background, Texture2D& foreground);
+void RunGame(Texture2D& background, Texture2D& foreground);
 void hasCollided();
 void loseCondition();
+void initializeAll();

@@ -1,33 +1,32 @@
 #include "Game.h"
 
 
-void RunGame()
+void RunGame(Texture2D& background, Texture2D& foreground)
 {
-	scenesSwitch();
+	scenesSwitch(background, foreground);
 }
 
 void Update()
 {
 	framesCounter++;
+	moveParallax();
 	hasCollided();
 	loseCondition();
 	playerMovement();
 	playerInput();
 	moveObstacle();
-	checkPlay();
-	checkCredits();
-	checkQuit();
 }
 
-void Drawing()
+void Drawing(Texture2D& background, Texture2D& foreground) 
 {
 	BeginDrawing();
 
 	ClearBackground(RAYWHITE);
 	//---------------------------------------------------------------------------
+ 	drawParallax(background, foreground);
 	DrawText(TextFormat("LIVES: " "%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES: " "%i", car.lives), 20), 2, 20, BLACK);//LIVES DRAWING
 	DrawText("Version 0.1", 2, 2, 20, BLACK);//VERSION DRAWING
-	DrawRectangleRec(parallax.rec, GREEN);//PARALLAX DRAWING
+	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
 
@@ -36,10 +35,11 @@ void Drawing()
 
 }
 
-void play()
+void UpdateMenu()
 {
-
-
+	checkPlay();
+	checkCredits();
+	checkQuit();
 }
 
 void hasCollided()
@@ -55,6 +55,16 @@ void hasCollided()
 		car.canCollide = false;
 		car.lives--;
 	}
+}
+
+void initializeAll()
+{
+	framesCounter = 0;
+
+	initializeParallax();
+	initializeObstacle();
+	initializeCar();
+	initializeTexts();
 }
 
 void loseCondition()

@@ -26,7 +26,7 @@ struct Buttons
 };
 extern Buttons Texto[3];
 
-void scenesSwitch();
+void scenesSwitch(Texture2D& background, Texture2D& foreground);
 void initializeTexts();
 void drawButtons();
 void drawPlay();
@@ -35,4 +35,3 @@ void drawCredits();
 void checkCredits();
 void drawQuit();
 void checkQuit();
-void initializeAll();

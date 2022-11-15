@@ -78,15 +78,6 @@ void checkQuit()
 	}
 }
 
-void initializeAll()
-{
-	framesCounter = 0;
-	initializeParallax();
-	initializeObstacle();
-	initializeCar();
-	initializeTexts();
-}
-
 void drawButtons()
 {
 	BeginDrawing();
@@ -97,14 +88,14 @@ void drawButtons()
 	EndDrawing();
 }
 
-void scenesSwitch()
+void scenesSwitch(Texture2D& background, Texture2D& foreground)
 {
 	switch (menu)
 	{
 	case MenuScenes::MainMenu:
 
 		initializeAll();
-		Update();
+		UpdateMenu();
 		drawButtons();
 
 		break;
@@ -112,8 +103,7 @@ void scenesSwitch()
 	case MenuScenes::Play:
 
 		Update();
-		play();
-		Drawing();
+		Drawing(background, foreground);
 
 		break;
 
