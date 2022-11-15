@@ -39,6 +39,7 @@ void moveParallax()
 	if (backGround[0].pos.x <= 0 - backGround[0].size.x)
 	{
 		backGround[0].pos.x = backGround[1].size.x;
+		
 
 	}
 	if (backGround[1].pos.x <= 0 - backGround[1].size.x)
@@ -49,7 +50,8 @@ void moveParallax()
 	
 	if (foreGround[0].pos.x <= 0 - foreGround[0].size.x)
 	{
-		foreGround[0].pos.x = foreGround[1].size.x - 200;
+		foreGround[0].pos.x = foreGround[1].size.x-200;
+		
 
 	}
 	if (foreGround[0].pos.x <= 0 - foreGround[1].size.x)

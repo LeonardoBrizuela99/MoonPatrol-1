@@ -1,4 +1,5 @@
 #include "Car.h"
+#include <iostream>
 
 void initializeCar()
 {
@@ -63,5 +64,16 @@ void playerMovement()
 	if (car.rec.x > GetScreenWidth() - car.rec.width)
 	{
 		car.rec.x = GetScreenWidth() - car.rec.width;
+	}
+}
+
+void playerCollition(Car& car, Obstacle& osbtacle)
+{
+	if (CheckCollisionRecs(car.rec,obstacle.rec))
+	{
+		std::cout << "chocaste" << std::endl;
+		car.lives--;
+		initializeObstacle();
+		
 	}
 }

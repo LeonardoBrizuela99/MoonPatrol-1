@@ -15,6 +15,8 @@ void Update()
 	playerMovement();
 	playerInput();
 	moveObstacle();
+	playerCollition(car, obstacle);
+	MoveSpaceShip(spaceShip);
 }
 
 void Drawing(Texture2D& background, Texture2D& foreground) 
@@ -29,6 +31,7 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
+	DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
 
 	//---------------------------------------------------------------------------
 	EndDrawing();
@@ -53,7 +56,7 @@ void hasCollided()
 	if (CheckCollisionRecs(car.rec, obstacle.rec) && car.canCollide == true)
 	{
 		car.canCollide = false;
-		car.lives--;
+		
 	}
 }
 
@@ -64,6 +67,7 @@ void initializeAll()
 	initializeParallax();
 	initializeObstacle();
 	initializeCar();
+	initializeSpaceShip();
 	initializeTexts();
 }
 
@@ -72,5 +76,6 @@ void loseCondition()
 	if (car.lives <= 0 && car.canCollide == true)
 	{
 		menu = MenuScenes::MainMenu;
+		initializeAll();
 	}
 }

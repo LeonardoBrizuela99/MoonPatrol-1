@@ -3,6 +3,7 @@
 #include "MainMenu.h"
 #include "Obstacle.h"
 #include "Parallax.h"
+#include"SpaceShips.h"
 #include <raylib.h>
 
 struct Game

@@ -12,7 +12,7 @@ void moveObstacle()
 {
 	obstacle.rec.x -= GetFrameTime() * 300;
 
-	if (obstacle.rec.x < GetScreenWidth() * 0 - 700)
+	if (obstacle.rec.x < GetScreenWidth() *0 - 400)
 	{
 		obstacle.rec.x = GetScreenWidth() + obstacle.rec.width;
 	}

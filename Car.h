@@ -1,5 +1,6 @@
 #pragma once
 #include <raylib.h>
+#include "Obstacle.h"
 
 struct Car
 {
@@ -16,3 +17,4 @@ extern Car car;
 void initializeCar();
 void playerInput();
 void playerMovement();
+void playerCollition(Car& car, Obstacle& osbtacle);

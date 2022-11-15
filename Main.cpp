@@ -6,7 +6,9 @@
 #include "MainMenu.h"
 #include "Obstacle.h"
 #include "Parallax.h"
+#include "SpaceShips.h"
 
+SpaceShips spaceShip;
 Car car;
 Obstacle obstacle;
 MenuScenes menu;
