@@ -15,10 +15,21 @@ void initializeCar()
 	car.canCollide = true;
 	car.isJumping = true;
 
+	car.bulletActive = false;
+	car.bullet.x = car.rec.x;
+	car.bullet.x = car.rec.y;
+	car.bullet.width = 10;
+	car.bullet.height = 10;
+
+
 }
 
 void playerInput()
 {
+	if (IsKeyPressed(KEY_ENTER))
+	{
+		bulletCar();
+	}
 	if (IsKeyDown(KEY_SPACE) && !car.isJumping)
 	{
 		car.speed.y = -600;
@@ -65,6 +76,18 @@ void playerMovement()
 	{
 		car.rec.x = GetScreenWidth() - car.rec.width;
 	}
+	if (car.bulletActive == true)
+	{
+		car.bullet.y -= 400 * GetFrameTime();
+	}
+
+	if (car.bullet.y <= 0)
+	{
+
+		car.bulletActive = false;
+		car.bullet.x =car.rec.x+25;
+		car.bullet.y = car.rec.y-10;
+	}
 }
 
 void playerCollition(Car& car, Obstacle& osbtacle)
@@ -75,4 +98,9 @@ void playerCollition(Car& car, Obstacle& osbtacle)
 		initializeObstacle();
 		
 	}
+}
+
+bool bulletCar()
+{
+	return car.bulletActive = true;
 }

@@ -4,7 +4,9 @@
 
 struct Car
 {
+	bool bulletActive = false;
 	Rectangle rec;
+	Rectangle bullet;
 	Vector2 speed;
 	Vector2 startingPoint;
 	bool isJumping;
@@ -18,3 +20,4 @@ void initializeCar();
 void playerInput();
 void playerMovement();
 void playerCollition(Car& car, Obstacle& osbtacle);
+bool bulletCar();

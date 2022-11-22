@@ -32,6 +32,14 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
 	DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+	if (car.bulletActive == true)
+	{
+		DrawRectangle(static_cast<int>(car.bullet.x),
+			static_cast<int>(car.bullet.y),
+			static_cast<int>(car.bullet.width),
+			static_cast<int>(car.bullet.height),
+			WHITE);
+	}
 
 	//---------------------------------------------------------------------------
 	EndDrawing();
