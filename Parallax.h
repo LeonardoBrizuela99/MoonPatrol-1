@@ -7,12 +7,12 @@ struct Parallax
 	Vector2 size;
 };
 extern Parallax foreGround[2];
-extern Parallax backGround[2];
+//extern Parallax backGround[2];
 
-extern float scrollingBack;
+//extern float scrollingBack;
 extern float scrollingMid;
 
 
 void initializeParallax();
 void moveParallax();
-void drawParallax(Texture2D& background, Texture2D& foreground);
+void drawParallax(/*Texture2D& background,*/ Texture2D& foreground);

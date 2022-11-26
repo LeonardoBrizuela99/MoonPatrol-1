@@ -28,7 +28,7 @@ void playerInput()
 {
 	if (IsKeyPressed(KEY_ENTER))
 	{
-		bulletCar();
+		car.bulletActive = true;
 	}
 	if (IsKeyDown(KEY_SPACE) && !car.isJumping)
 	{
@@ -78,7 +78,7 @@ void playerMovement()
 	}
 	if (car.bulletActive == true)
 	{
-		car.bullet.y -= 400 * GetFrameTime();
+		car.bullet.y -= 800 * GetFrameTime();
 	}
 
 	if (car.bullet.y <= 0)
@@ -86,7 +86,7 @@ void playerMovement()
 
 		car.bulletActive = false;
 		car.bullet.x =car.rec.x+25;
-		car.bullet.y = car.rec.y-10;
+		car.bullet.y = car.rec.y;
 	}
 }
 
@@ -94,13 +94,13 @@ void playerCollition(Car& car, Obstacle& osbtacle)
 {
 	if (CheckCollisionRecs(car.rec,obstacle.rec))
 	{
-		car.lives--;
+		//car.lives--;
 		initializeObstacle();
 		
 	}
 }
 
-bool bulletCar()
-{
-	return car.bulletActive = true;
-}
+//bool bulletCar()
+//{
+//	return car.bulletActive = true;
+//}

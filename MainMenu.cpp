@@ -89,7 +89,7 @@ void drawButtons()
 	EndDrawing();
 }
 
-void scenesSwitch(Texture2D& background, Texture2D& foreground)
+void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground)
 {
 	switch (menu)
 	{
@@ -104,7 +104,7 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 	case MenuScenes::Play:
 		
 			Update();
-			Drawing(background, foreground);
+			Drawing(/*background,*/ foreground);
 
 
 		break;

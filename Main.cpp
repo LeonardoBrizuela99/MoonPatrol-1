@@ -34,7 +34,7 @@ int main(void)
 	while (!WindowShouldClose()/*&& quit==true*/)
 	{
 		
-			RunGame(background, foreground);
+			RunGame(/*background,*/ foreground);
 		
 	}
 

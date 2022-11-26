@@ -1,5 +1,7 @@
 #include "SpaceShips.h"
+//#include"Car.h"
 #include <iostream>
+using namespace std;
 
 void initializeSpaceShip()
 {
@@ -16,12 +18,21 @@ void MoveSpaceShip()
 	spaceShip.pos.x += 100 * GetFrameTime();
 	spaceShip.pos.y -= sin(spaceShip.pos.x / 10) * GetFrameTime() * 600.0f;
 
-	if (spaceShip.pos.x>=GetScreenWidth()+spaceShip.pos.width*2)
+	if (spaceShip.pos.x>=GetScreenWidth()+spaceShip.pos.width*2&&spaceShip.isDeath==false)
+	{
+		initializeSpaceShip();
+	}
+	if (spaceShip.isDeath==true)
 	{
 		initializeSpaceShip();
 	}
 }
 
-void CollitionSpaceship()
+void CollitionSpaceship(Car& car,SpaceShips& spaceShip)
 {
+	if (CheckCollisionRecs(car.bullet,spaceShip.pos))
+	{
+		spaceShip.isDeath = true;
+		cout << spaceShip.isDeath << endl;
+	}
 }

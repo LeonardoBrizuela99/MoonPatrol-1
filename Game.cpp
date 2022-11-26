@@ -1,9 +1,9 @@
 #include "Game.h"
 
 
-void RunGame(Texture2D& background, Texture2D& foreground)
+void RunGame(/*Texture2D& background,*/ Texture2D& foreground)
 {
-	scenesSwitch(background, foreground);
+	scenesSwitch(/*background,*/ foreground);
 }
 
 void Update()
@@ -16,29 +16,33 @@ void Update()
 	playerInput();
 	moveObstacle();
 	playerCollition(car, obstacle);
+	CollitionSpaceship(car, spaceShip);
 	MoveSpaceShip(/*spaceShip*/);
 }
 
-void Drawing(Texture2D& background, Texture2D& foreground) 
+void Drawing(/*Texture2D& background,*/ Texture2D& foreground) 
 {
 	BeginDrawing();
 
 	ClearBackground(RAYWHITE);
 	//---------------------------------------------------------------------------
- 	drawParallax(background, foreground);
+ 	drawParallax(/*background,*/ foreground);
 	DrawText(TextFormat("LIVES: " "%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES: " "%i", car.lives), 20), 2, 20, BLACK);//LIVES DRAWING
 	DrawText("Version 0.1", 2, 2, 20, BLACK);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
-	DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+	if (spaceShip.isDeath==false)
+	{
+		DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+	}
 	if (car.bulletActive == true)
 	{
 		DrawRectangle(static_cast<int>(car.bullet.x),
 			static_cast<int>(car.bullet.y),
 			static_cast<int>(car.bullet.width),
 			static_cast<int>(car.bullet.height),
-			WHITE);
+			RED);
 	}
 
 	//---------------------------------------------------------------------------
