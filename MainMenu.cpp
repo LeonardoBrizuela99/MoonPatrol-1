@@ -144,8 +144,9 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 
 	case MenuScenes::Credits:
 
-		/*UpdateMenu();*/
-		DrawText("CODIGO:", GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 + 250, 20, WHITE);
+		
+		CreditsWindow();
+		
 		break;
 
 	case MenuScenes::Quit:
@@ -155,15 +156,7 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 
 		break;
 
-	case MenuScenes::Win:
-
-
-		break;
-
-	case MenuScenes::Lose:
-
-		/*loseCondition();*/
-		break;
+	
 	}
 
 }

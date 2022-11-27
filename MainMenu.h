@@ -11,9 +11,7 @@ enum class MenuScenes
 	Play,
 	Multiplayer,
 	Credits,
-	Quit,
-	Win,
-	Lose
+	Quit
 };
 extern MenuScenes menu;
 

@@ -21,6 +21,8 @@ void RunGame(Texture2D& background, Texture2D& foreground);
 //bool Pause();
 //void hasCollided();
 void UpdateMultiPlayer();
+void CreditsWindow();
+
 
 void loseText();
 void loseCondition();
