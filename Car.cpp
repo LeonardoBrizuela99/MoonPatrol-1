@@ -193,8 +193,24 @@ void playerCollition(Car& car, Obstacle& osbtacle)
 	} 
 	else if(car.isJumping==true&& obstacle.collition==false&&obstacle.rec.x<=car.rec.x && obstacle.rec.y <= car.rec.y)
 	{
-		car.points += 20;
+		car.points += 10;
 	}
+
+}
+void player2Collition(Car& carPlayer2, Obstacle& osbtacle)
+{
+	if (CheckCollisionRecs(carPlayer2.rec, obstacle.rec))
+	{
+		carPlayer2.lives--;
+		initializeObstacle();
+
+	}
+	else if (car.isJumping == true && obstacle.collition == false && obstacle.rec.x <= carPlayer2.rec.x && obstacle.rec.y <= carPlayer2.rec.y)
+	{
+		carPlayer2.points += 10;
+		
+	}
+
 }
 
 //bool bulletCar()

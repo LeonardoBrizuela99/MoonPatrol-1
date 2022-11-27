@@ -2,7 +2,7 @@
 #include "Game.h"
 #include <iostream>
 
-
+ 
 
 void initializeTexts()
 {
@@ -116,7 +116,7 @@ void drawButtons()
 	EndDrawing();
 }
 
-void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground)
+void scenesSwitch(Texture2D& background, Texture2D& foreground)
 {
 	switch (menu)
 	{
@@ -129,27 +129,16 @@ void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground)
 		break;
 
 	case MenuScenes::Play:
-		
-
-		
-		
-		/*if (pause == true)
-		{*/
-
-			Update();
-			Drawing(/*background,*/ foreground);
-
-		/*}*/
-		
 			
-
+			Update();
+			Drawing(background, foreground);
 
 		break;
 
 	case MenuScenes::Multiplayer:
 
-		Update();
-		DrawingMultiplayer(foreground);
+		UpdateMultiPlayer();
+		DrawingMultiplayer(background,foreground);
 		/*Drawing(foreGround);*/
 		break;
 
@@ -161,6 +150,7 @@ void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground)
 
 	case MenuScenes::Quit:
 
+		 salir = true;
 		
 
 		break;
@@ -172,6 +162,7 @@ void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground)
 
 	case MenuScenes::Lose:
 
+		/*loseCondition();*/
 		break;
 	}
 

@@ -23,4 +23,6 @@ void initializeCar();
 void playerInput();
 void playerMovement();
 void playerCollition(Car& car, Obstacle& osbtacle);
+void player2Collition(Car& carPlayer2, Obstacle& osbtacle);
+
 //bool bulletCar();

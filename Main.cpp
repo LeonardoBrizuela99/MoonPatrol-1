@@ -15,7 +15,7 @@ MenuScenes menu;
 Buttons Texto[3];
  Parallax foreGround[2];
 Parallax backGround[2];
-
+bool salir;
 float scrollingBack;
 float scrollingMid;
 int framesCounter;
@@ -31,13 +31,15 @@ int main(void)
 	
 	SetTargetFPS(60);
 
-	while (!WindowShouldClose()/*&& quit==true*/)
+	while (!WindowShouldClose()&&salir==false)
 	{
 		
-			RunGame(/*background,*/ foreground);
+			RunGame(background, foreground);
+
 		
 	}
 
+	UnloadTexture(foreground);
 	// De-Initialization
 	//--------------------------------------------------------------------------------------
 	CloseWindow();        // Close window and OpenGL context

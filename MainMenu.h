@@ -27,9 +27,9 @@ struct Buttons
 };
 extern Buttons Texto[3];
 
-//extern bool quit = false;
 
-void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground);
+extern bool salir;
+void scenesSwitch(Texture2D& background, Texture2D& foreground);
 void initializeTexts();
 void drawButtons();
 void drawPlay();
@@ -40,4 +40,6 @@ void drawCredits();
 void checkCredits();
 void drawQuit();
 void checkQuit();
+
+
 
