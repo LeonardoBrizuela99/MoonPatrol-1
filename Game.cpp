@@ -197,8 +197,8 @@ void DrawingMultiplayer(Texture2D& background,Texture2D& foreground)
 	DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
 	DrawText(TextFormat("LIVES:%i", carPlayer2.lives),460, 40, 20, WHITE);//LIVES DRAWING
 	DrawText("Version 1.0", 2, 2, 20, WHITE);//VERSION DRAWING
-	DrawText(TextFormat("Points:%4i", car.points), 230, 2, 20, WHITE);//VERSION DRAWING
-	DrawText(TextFormat("Points:%4i", carPlayer2.points), 230, 40, 20, WHITE);//VERSION DRAWING
+	DrawText(TextFormat("1 Points:%4i", car.points), 230, 2, 20, WHITE);//VERSION DRAWING
+	DrawText(TextFormat("2 Points:%4i", carPlayer2.points), 230, 40, 20, WHITE);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(carPlayer2.rec, GREEN);//CAR DRAWING
