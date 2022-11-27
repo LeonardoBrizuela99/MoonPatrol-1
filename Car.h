@@ -13,6 +13,7 @@ struct Car
 	bool canCollide;
 	int lives;
 	float maxJump;
+	int points;
 };
 extern Car car;
 

@@ -16,6 +16,7 @@ void Update();
 void UpdateMenu();
 void Drawing(/*Texture2D& background,*/ Texture2D& foreground);
 void RunGame(/*Texture2D& background,*/ Texture2D& foreground);
+bool Pause();
 //void hasCollided();
 void loseCondition();
 void initializeAll();

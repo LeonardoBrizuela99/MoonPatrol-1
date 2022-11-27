@@ -13,7 +13,7 @@ Car car;
 Obstacle obstacle;
 MenuScenes menu;
 Buttons Texto[3];
-Parallax foreGround[2];
+ Parallax foreGround[2];
 Parallax backGround[2];
 
 float scrollingBack;

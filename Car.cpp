@@ -14,6 +14,7 @@ void initializeCar()
 	car.startingPoint.y = GetScreenHeight() / 8 * 6;
 	car.canCollide = true;
 	car.isJumping = true;
+	car.points = 0;
 
 	car.bulletActive = false;
 	car.bullet.x = car.rec.x;
@@ -26,9 +27,17 @@ void initializeCar()
 
 void playerInput()
 {
-	if (IsKeyPressed(KEY_ENTER))
+	if (IsKeyPressed(KEY_UP))
 	{
+		if (car.bulletActive == false)
+		{
+			car.bullet.x = car.rec.x + 25;
+		}
+
 		car.bulletActive = true;
+		
+		
+
 	}
 	if (IsKeyDown(KEY_SPACE) && !car.isJumping)
 	{
@@ -57,9 +66,21 @@ void playerMovement()
 	car.rec.x += car.speed.x * GetFrameTime();
 	car.rec.y += car.speed.y * GetFrameTime();
 
+	if (car.bulletActive == true)
+	{
+		car.bullet.y -=800*GetFrameTime();
+	}
+
+	if (car.bullet.y <= 0)
+	{
+
+		car.bulletActive = false;
+		car.bullet.x = car.rec.x + 25;
+		car.bullet.y = car.rec.y+60*GetFrameTime();
+	}
 	if (car.isJumping)
 	{
-		car.speed.y += 1500 * GetFrameTime();
+		car.speed.y += 1500* GetFrameTime();
 	}
 
 	if (car.rec.y > GetScreenHeight() / 8 * 6)
@@ -76,18 +97,8 @@ void playerMovement()
 	{
 		car.rec.x = GetScreenWidth() - car.rec.width;
 	}
-	if (car.bulletActive == true)
-	{
-		car.bullet.y -= 800 * GetFrameTime();
-	}
 
-	if (car.bullet.y <= 0)
-	{
-
-		car.bulletActive = false;
-		car.bullet.x =car.rec.x+25;
-		car.bullet.y = car.rec.y;
-	}
+	
 }
 
 void playerCollition(Car& car, Obstacle& osbtacle)

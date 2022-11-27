@@ -9,6 +9,7 @@ enum class MenuScenes
 {
 	MainMenu,
 	Play,
+	Multiplayer,
 	Credits,
 	Quit,
 	Win,
@@ -37,3 +38,4 @@ void drawCredits();
 void checkCredits();
 void drawQuit();
 void checkQuit();
+

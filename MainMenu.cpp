@@ -1,5 +1,8 @@
 #include "MainMenu.h"
 #include "Game.h"
+#include <iostream>
+
+
 
 void initializeTexts()
 {
@@ -103,10 +106,25 @@ void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground)
 
 	case MenuScenes::Play:
 		
+
+		
+		
+		/*if (pause == true)
+		{*/
+
 			Update();
 			Drawing(/*background,*/ foreground);
 
+		/*}*/
+		
+			
 
+
+		break;
+
+	case MenuScenes::Multiplayer:
+		Update();
+		/*Drawing(foreGround);*/
 		break;
 
 	case MenuScenes::Credits:
@@ -132,3 +150,16 @@ void scenesSwitch(/*Texture2D& background,*/ Texture2D& foreground)
 	}
 
 }
+
+/*bool Pause()
+{
+	if (IsKeyPressed('P') || IsKeyPressed('p') || IsKeyPressed(KEY_ESCAPE))
+	{
+		cout << pause << endl;
+		return pause = !pause;
+
+		//cout << pause << endl;
+		//0 false
+		//1 true
+	}
+}*/

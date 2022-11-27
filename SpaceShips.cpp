@@ -1,6 +1,8 @@
 #include "SpaceShips.h"
 //#include"Car.h"
 #include <iostream>
+
+
 using namespace std;
 
 void initializeSpaceShip()
@@ -32,7 +34,9 @@ void CollitionSpaceship(Car& car,SpaceShips& spaceShip)
 {
 	if (CheckCollisionRecs(car.bullet,spaceShip.pos))
 	{
+		
 		spaceShip.isDeath = true;
+		car.points += 100;
 		cout << spaceShip.isDeath << endl;
 	}
 }
