@@ -9,7 +9,7 @@ enum class MenuScenes
 {
 	MainMenu,
 	Play,
-	/*Multiplayer,*/
+	Multiplayer,
 	Credits,
 	Quit
 };
@@ -32,8 +32,8 @@ void initializeTexts();
 void drawButtons();
 void drawPlay();
 void checkPlay();
-//void drawMultiPlayer();
-//void checkMultiPlayer();
+void drawMultiPlayer();
+void checkMultiPlayer();
 void drawCredits();
 void checkCredits();
 void drawQuit();

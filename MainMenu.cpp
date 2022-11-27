@@ -62,19 +62,19 @@ void checkPlay()
 	}
 }
 
-//void drawMultiPlayer()
-//{
-//	DrawRectangle(static_cast<int>(Texto[1].backgroundBttn.x), static_cast<int>(Texto[1].backgroundBttn.y), static_cast<int>(Texto[1].backgroundBttn.width), static_cast<int>(Texto[1].backgroundBttn.height), WHITE);
-//	DrawText(Texto[1].text.c_str(), static_cast<int> (Texto[1].pos.x), static_cast<int>(Texto[1].pos.y), static_cast<int> (Texto[1].fontSize), BLUE);
-//}
+void drawMultiPlayer()
+{
+	DrawRectangle(static_cast<int>(Texto[1].backgroundBttn.x), static_cast<int>(Texto[1].backgroundBttn.y), static_cast<int>(Texto[1].backgroundBttn.width), static_cast<int>(Texto[1].backgroundBttn.height), WHITE);
+	DrawText(Texto[1].text.c_str(), static_cast<int> (Texto[1].pos.x), static_cast<int>(Texto[1].pos.y), static_cast<int> (Texto[1].fontSize), BLUE);
+}
 
-//void checkMultiPlayer()
-//{
-//	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && CheckCollisionPointRec(GetMousePosition(), Texto[1].backgroundBttn))
-//	{
-//		menu = MenuScenes::Multiplayer;
-//	}
-//}
+void checkMultiPlayer()
+{
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && CheckCollisionPointRec(GetMousePosition(), Texto[1].backgroundBttn))
+	{
+		menu = MenuScenes::Multiplayer;
+	}
+}
 
 void drawCredits()
 {
@@ -110,7 +110,7 @@ void drawButtons()
 	BeginDrawing();
 	ClearBackground(BEIGE);
 	drawPlay();
-	/*drawMultiPlayer();*/
+	drawMultiPlayer();
 	drawCredits();
 	drawQuit();
 	EndDrawing();
@@ -135,11 +135,11 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 
 		break;
 
-	/*case MenuScenes::Multiplayer:
+	case MenuScenes::Multiplayer:
 
 		UpdateMultiPlayer();
 		DrawingMultiplayer(background,foreground);
-		break;*/
+		break;
 
 	case MenuScenes::Credits:
 
