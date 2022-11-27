@@ -40,3 +40,14 @@ void CollitionSpaceship(Car& car,SpaceShips& spaceShip)
 		cout << spaceShip.isDeath << endl;
 	}
 }
+
+void CollitionSpaceshipPlayer2(Car& carPlayer2, SpaceShips& spaceShip)
+{
+	if (CheckCollisionRecs(carPlayer2.bullet, spaceShip.pos))
+	{
+
+		spaceShip.isDeath = true;
+		carPlayer2.points += 100;
+		cout << spaceShip.isDeath << endl;
+	}
+}

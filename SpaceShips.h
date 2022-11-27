@@ -9,7 +9,9 @@ struct SpaceShips
 extern SpaceShips spaceShip;
 
 void initializeSpaceShip();
-void MoveSpaceShip(/*SpaceShips& spaceShip*/);
+void MoveSpaceShip();
 void CollitionSpaceship(Car& car, SpaceShips& spaceShip);
+//void CollitionSpaceshipPlayer2(Car& carPlayer2, SpaceShips& spaceShip);
+//
 
 

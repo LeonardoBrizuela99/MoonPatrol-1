@@ -15,7 +15,7 @@ struct Car
 	float maxJump;
 	int points;
 };
-extern Car car, carPlayer2;
+extern Car car/*, carPlayer2*/;
 //extern Car carPlayer2;
 
 
@@ -23,6 +23,6 @@ void initializeCar();
 void playerInput();
 void playerMovement();
 void playerCollition(Car& car, Obstacle& osbtacle);
-void player2Collition(Car& carPlayer2, Obstacle& osbtacle);
+//void player2Collition(Car& carPlayer2, Obstacle& osbtacle);
 
 //bool bulletCar();

@@ -6,7 +6,7 @@
 
 void initializeTexts()
 {
-	Texto[0].text = "1PLAYER";
+	Texto[0].text = "1 PLAYER";
 	Texto[0].fontSize = 40;
 	Texto[0].pos.x = GetScreenWidth() / 2 - MeasureText(Texto[0].text.c_str(), 50) / 2.0f + 12;
 	Texto[0].pos.y = 170;
@@ -16,7 +16,7 @@ void initializeTexts()
 	Texto[0].backgroundBttn.width = static_cast<float>(MeasureText(Texto[0].text.c_str(), 50));
 	Texto[0].backgroundBttn.height = 50;
 
-	Texto[1].text = "2PLAYER";
+	Texto[1].text = "2 PLAYER";
 	Texto[1].fontSize = 40;
 	Texto[1].pos.x = GetScreenWidth() / 2 - MeasureText(Texto[0].text.c_str(), 50) / 2.0f + 5;
 	Texto[1].pos.y = 50;
@@ -40,10 +40,10 @@ void initializeTexts()
 	Texto[3].text = "QUIT";
 	Texto[3].fontSize = 40;
 	Texto[3].pos.x = GetScreenWidth() / 2 - MeasureText(Texto[2].text.c_str(), 50) / 2.0f+ 13;
-	Texto[3].pos.y = 380;
+	Texto[3].pos.y = 420;
 		  
 	Texto[3].backgroundBttn.x = GetScreenWidth() / 2.0f- MeasureText(Texto[2].text.c_str(), 50) / 2;
-	Texto[3].backgroundBttn.y = 373;
+	Texto[3].backgroundBttn.y = 415;
 	Texto[3].backgroundBttn.width = static_cast<float>(MeasureText(Texto[2].text.c_str(), 50));
 	Texto[3].backgroundBttn.height = 50;
 }
@@ -62,19 +62,19 @@ void checkPlay()
 	}
 }
 
-void drawMultiPlayer()
-{
-	DrawRectangle(static_cast<int>(Texto[1].backgroundBttn.x), static_cast<int>(Texto[1].backgroundBttn.y), static_cast<int>(Texto[1].backgroundBttn.width), static_cast<int>(Texto[1].backgroundBttn.height), WHITE);
-	DrawText(Texto[1].text.c_str(), static_cast<int> (Texto[1].pos.x), static_cast<int>(Texto[1].pos.y), static_cast<int> (Texto[1].fontSize), BLUE);
-}
+//void drawMultiPlayer()
+//{
+//	DrawRectangle(static_cast<int>(Texto[1].backgroundBttn.x), static_cast<int>(Texto[1].backgroundBttn.y), static_cast<int>(Texto[1].backgroundBttn.width), static_cast<int>(Texto[1].backgroundBttn.height), WHITE);
+//	DrawText(Texto[1].text.c_str(), static_cast<int> (Texto[1].pos.x), static_cast<int>(Texto[1].pos.y), static_cast<int> (Texto[1].fontSize), BLUE);
+//}
 
-void checkMultiPlayer()
-{
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && CheckCollisionPointRec(GetMousePosition(), Texto[1].backgroundBttn))
-	{
-		menu = MenuScenes::Multiplayer;
-	}
-}
+//void checkMultiPlayer()
+//{
+//	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && CheckCollisionPointRec(GetMousePosition(), Texto[1].backgroundBttn))
+//	{
+//		menu = MenuScenes::Multiplayer;
+//	}
+//}
 
 void drawCredits()
 {
@@ -110,7 +110,7 @@ void drawButtons()
 	BeginDrawing();
 	ClearBackground(BEIGE);
 	drawPlay();
-	drawMultiPlayer();
+	/*drawMultiPlayer();*/
 	drawCredits();
 	drawQuit();
 	EndDrawing();
@@ -135,12 +135,11 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 
 		break;
 
-	case MenuScenes::Multiplayer:
+	/*case MenuScenes::Multiplayer:
 
 		UpdateMultiPlayer();
 		DrawingMultiplayer(background,foreground);
-		/*Drawing(foreGround);*/
-		break;
+		break;*/
 
 	case MenuScenes::Credits:
 
@@ -161,15 +160,3 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 
 }
 
-/*bool Pause()
-{
-	if (IsKeyPressed('P') || IsKeyPressed('p') || IsKeyPressed(KEY_ESCAPE))
-	{
-		cout << pause << endl;
-		return pause = !pause;
-
-		//cout << pause << endl;
-		//0 false
-		//1 true
-	}
-}*/

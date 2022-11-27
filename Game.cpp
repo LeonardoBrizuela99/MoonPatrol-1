@@ -32,6 +32,7 @@ void Update()
 			moveObstacle();
 			playerCollition(car, obstacle);
 			CollitionSpaceship(car, spaceShip);
+			
 			MoveSpaceShip(/*spaceShip*/);
 
 		}
@@ -44,40 +45,42 @@ void Update()
 		
 
 }
-void UpdateMultiPlayer()
-{
-	backMenu();
-	if (IsKeyPressed('P') || IsKeyPressed('p') || IsKeyPressed(KEY_ESCAPE))
-	{
 
-		pause = !pause;
-
-	}
-
-	if (car.lives != 0/*||carPlayer2.lives!=0*/)
-	{
-
-		if (pause == true)
-		{
-			framesCounter++;
-			moveParallax();
-			loseCondition();
-			playerMovement();
-			playerInput();
-			moveObstacle();
-			playerCollition(car, obstacle);
-			player2Collition(carPlayer2, obstacle);
-			CollitionSpaceship(car, spaceShip);
-			MoveSpaceShip(/*spaceShip*/);
-
-		}
-	}
-	else
-	{
-		loseText();
-		
-	}
-}
+//void UpdateMultiPlayer()
+//{
+//	backMenu();
+//	if (IsKeyPressed('P') || IsKeyPressed('p') || IsKeyPressed(KEY_ESCAPE))
+//	{
+//
+//		pause = !pause;
+//
+//	}
+//
+//	if (car.lives != 0||carPlayer2.lives!=0)
+//	{
+//
+//		if (pause == true)
+//		{
+//			framesCounter++;
+//			moveParallax();
+//			loseCondition();
+//			playerMovement();
+//			playerInput();
+//			moveObstacle();
+//			playerCollition(car, obstacle);
+//			/*player2Collition(carPlayer2, obstacle);*/
+//			CollitionSpaceship(car, spaceShip);
+//			/*CollitionSpaceshipPlayer2(carPlayer2, spaceShip);*/
+//			MoveSpaceShip();
+//
+//		}
+//	}
+//	else
+//	{
+//		loseText();
+//		
+//	}
+//}
 
 void Drawing(Texture2D& background, Texture2D& foreground) 
 {
@@ -88,15 +91,15 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	
  	drawParallax(background, foreground);
 	DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	DrawText("Version 0.1", 2, 2, 20, WHITE);//VERSION DRAWING
-	DrawText(TextFormat("Points:%4i",car.points), 230,2, 20, WHITE);//VERSION DRAWING
+	DrawText("Version 0.2", 2, 2, 20, WHITE);//VERSION DRAWING
+	//DrawText(TextFormat("Points:%4i",car.points), 230,2, 20, WHITE);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
-	if (spaceShip.isDeath==false)
-	{
-		DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
-	}
+	//if (spaceShip.isDeath==false)
+	//{
+	//	DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+	//}
 
 	if (car.bulletActive == true)
 	{
@@ -113,63 +116,63 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	EndDrawing();
 
 }
-void DrawingMultiplayer(Texture2D& background,Texture2D& foreground)
-{
-	BeginDrawing();
-
-	ClearBackground(DARKBLUE);
-	//---------------------------------------------------------------------------
-	if (menu == MenuScenes::Credits)
-	{
-		CreditsWindow();
-	}
-
-	drawParallax(background, foreground);
-	//DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	DrawText(TextFormat("LIVES:%i", carPlayer2.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", carPlayer2.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	DrawText("Version 0.1", 2, 2, 20, WHITE);//VERSION DRAWING
-	DrawText(TextFormat("Points:%4i", car.points), 230, 2, 20, WHITE);//VERSION DRAWING
-	//DrawText(TextFormat("Points:%4i", carPlayer2.points), 200, 2, 20, WHITE);//VERSION DRAWING
-	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
-	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
-	DrawRectangleRec(carPlayer2.rec, GREEN);//CAR DRAWING
-	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
-	
-	if (spaceShip.isDeath == false)
-	{
-		DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
-	}
-
-	if (car.bulletActive == true)
-	{
-		DrawRectangle(static_cast<int>(car.bullet.x),
-			static_cast<int>(car.bullet.y),
-			static_cast<int>(car.bullet.width),
-			static_cast<int>(car.bullet.height),
-			RED);
-	}
-
-	if (carPlayer2.bulletActive == true)
-	{
-		DrawRectangle(static_cast<int>(carPlayer2.bullet.x),
-			static_cast<int>(carPlayer2.bullet.y),
-			static_cast<int>(carPlayer2.bullet.width),
-			static_cast<int>(carPlayer2.bullet.height),
-			BLUE);
-	}
-	loseText();
-
-
-
-	//---------------------------------------------------------------------------
-	EndDrawing();
-
-}
+//void DrawingMultiplayer(Texture2D& background,Texture2D& foreground)
+//{
+//	BeginDrawing();
+//
+//	ClearBackground(DARKBLUE);
+//	//---------------------------------------------------------------------------
+//	if (menu == MenuScenes::Credits)
+//	{
+//		CreditsWindow();
+//	}
+//
+//	drawParallax(background, foreground);
+//	//DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
+//	DrawText(TextFormat("LIVES:%i", carPlayer2.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", carPlayer2.lives), 20), 2, 20, WHITE);//LIVES DRAWING
+//	DrawText("Version 0.1", 2, 2, 20, WHITE);//VERSION DRAWING
+//	DrawText(TextFormat("Points:%4i", car.points), 230, 2, 20, WHITE);//VERSION DRAWING
+//	//DrawText(TextFormat("Points:%4i", carPlayer2.points), 200, 2, 20, WHITE);//VERSION DRAWING
+//	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
+//	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
+//	DrawRectangleRec(carPlayer2.rec, GREEN);//CAR DRAWING
+//	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
+//	
+//	if (spaceShip.isDeath == false)
+//	{
+//		DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+//	}
+//
+//	if (car.bulletActive == true)
+//	{
+//		DrawRectangle(static_cast<int>(car.bullet.x),
+//			static_cast<int>(car.bullet.y),
+//			static_cast<int>(car.bullet.width),
+//			static_cast<int>(car.bullet.height),
+//			RED);
+//	}
+//
+//	if (carPlayer2.bulletActive == true)
+//	{
+//		DrawRectangle(static_cast<int>(carPlayer2.bullet.x),
+//			static_cast<int>(carPlayer2.bullet.y),
+//			static_cast<int>(carPlayer2.bullet.width),
+//			static_cast<int>(carPlayer2.bullet.height),
+//			BLUE);
+//	}
+//	loseText();
+//
+//
+//
+//	//---------------------------------------------------------------------------
+//	EndDrawing();
+//
+//}
 
 void UpdateMenu()
 {
 	checkPlay();
-	checkMultiPlayer();
+	/*checkMultiPlayer();*/
 	checkCredits();
 	checkQuit();
 }
@@ -186,7 +189,7 @@ void backMenu()
 void loseText()
 {
 
-	if (car.lives == 0|| carPlayer2.lives == 0)
+	if (car.lives == 0/*|| carPlayer2.lives == 0*/)
 	{
 		DrawText("GAME OVER", GetScreenWidth() / 2-150, GetScreenHeight() / 2-200, 50, BLACK);//VERSION DRAWING
 		DrawText("(E) Exit", GetScreenWidth() / 2+125, GetScreenHeight() / 2-100, 25, BLACK);//VERSION DRAWING
