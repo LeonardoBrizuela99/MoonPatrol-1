@@ -28,18 +28,25 @@ int main(void)
 
 	Texture2D background = LoadTexture("CloudTexture.png");
 	Texture2D foreground = LoadTexture("TerrainTexture.png");
+	/*Texture2D rock = LoadTexture("smallrockchipped_640.png");
+	Texture2D fish_1= LoadTexture("Fish.png");
+	Texture2D fish_2 = LoadTexture("Fish.png");*/
 	
 	SetTargetFPS(60);
 
 	while (!WindowShouldClose()&&salir==false)
 	{
 		
-			RunGame(background, foreground);
+			RunGame(background, foreground/*, rock, fish_1, fish_2*/);
 
 		
 	}
 
 	UnloadTexture(foreground);
+	UnloadTexture(background);
+	/*UnloadTexture(rock);
+	UnloadTexture(fish_1);
+	UnloadTexture(fish_2);*/
 	// De-Initialization
 	//--------------------------------------------------------------------------------------
 	CloseWindow();        // Close window and OpenGL context

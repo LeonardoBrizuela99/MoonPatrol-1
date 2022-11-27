@@ -116,7 +116,7 @@ void drawButtons()
 	EndDrawing();
 }
 
-void scenesSwitch(Texture2D& background, Texture2D& foreground)
+void scenesSwitch(Texture2D& background, Texture2D& foreground/*,Texture2D& rock, Texture2D& fish_1, Texture2D& fish_2*/)
 {
 	switch (menu)
 	{
@@ -131,14 +131,14 @@ void scenesSwitch(Texture2D& background, Texture2D& foreground)
 	case MenuScenes::Play:
 			
 			Update();
-			Drawing(background, foreground);
+			Drawing(background, foreground/*,rock, fish_1*/);
 
 		break;
 
 	case MenuScenes::Multiplayer:
 
 		UpdateMultiPlayer();
-		DrawingMultiplayer(background,foreground);
+		DrawingMultiplayer(background,foreground/*,rock, fish_1, fish_2*/);
 		break;
 
 	case MenuScenes::Credits:

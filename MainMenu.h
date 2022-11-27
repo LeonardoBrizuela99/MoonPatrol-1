@@ -27,7 +27,7 @@ extern Buttons Texto[3];
 
 
 extern bool salir;
-void scenesSwitch(Texture2D& background, Texture2D& foreground);
+void scenesSwitch(Texture2D& background, Texture2D& foreground/*,Texture2D& rock, Texture2D& fish_1, Texture2D& fish_2*/);
 void initializeTexts();
 void drawButtons();
 void drawPlay();

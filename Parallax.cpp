@@ -17,7 +17,7 @@ void initializeParallax()
 	backGround[1].size.x = sizeback;
 	backGround[1].size.y = 689;
 	backGround[1].pos.y = 0;
-	backGround[1].pos.x = size - offsetback ;/* backGround[1].size.x;*/
+	backGround[1].pos.x = size+offsetback-90;/* backGround[1].size.x;*/
 
 	foreGround[0].size.x = size;
 	foreGround[0].size.y = 495;
@@ -45,13 +45,13 @@ void moveParallax()
 
 	if (backGround[0].pos.x <= 0 - backGround[0].size.x)
 	{
-		backGround[0].pos.x = backGround[1].pos.x+sizeback-offsetback-90;
+		backGround[0].pos.x = backGround[1].pos.x+sizeback+offsetback-90;
 		
 
 	}
 	if (backGround[1].pos.x <= 0 - backGround[1].size.x)
 	{
-		backGround[1].pos.x = backGround[0].pos.x + sizeback - offsetback-90 ;
+		backGround[1].pos.x = backGround[0].pos.x + sizeback + offsetback-90 ;
 
 	}
 	

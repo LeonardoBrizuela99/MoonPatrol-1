@@ -3,9 +3,9 @@
 
 bool pause = true;
 
-void RunGame(Texture2D& background,Texture2D& foreground)
+void RunGame(Texture2D& background,Texture2D& foreground/*, Texture2D& rock, Texture2D& fish_1, Texture2D& fish_2*/)
 {
-	scenesSwitch(background, foreground);
+	scenesSwitch(background, foreground/*,rock,fish_1,fish_2*/);
 }
 
 void Update()
@@ -115,7 +115,7 @@ void UpdateMultiPlayer()
 	}
 }
 
-void Drawing(Texture2D& background, Texture2D& foreground) 
+void Drawing(Texture2D& background, Texture2D& foreground/*,Texture2D& rock, Texture2D& fish_1*/)
 {
 	BeginDrawing();
 
@@ -128,6 +128,7 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	DrawText(TextFormat("Points:%4i",car.points), 230,2, 20, WHITE);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
+	/*DrawTexture(rock, static_cast<float>(obstacle.rec.x)/2.0f, static_cast<float>(obstacle.rec.y)/2.0f, RED);*/
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
 	if (spaceShip.isDeath==false)
 	{
@@ -149,39 +150,10 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	EndDrawing();
 
 }
-void DrawingMultiplayer(Texture2D& background,Texture2D& foreground)
+void DrawingMultiplayer(Texture2D& background,Texture2D& foreground/*, Texture2D& rock, Texture2D& fish_1, Texture2D& fish_2*/)
 {
 
-	//BeginDrawing();
-
-	//ClearBackground(DARKBLUE);
-	////---------------------------------------------------------------------------
-
-	//drawParallax(background, foreground);
-	//DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	//DrawText("Version 1.0", 2, 2, 20, WHITE);//VERSION DRAWING
-	//DrawText(TextFormat("Points:%4i", car.points), 230, 2, 20, WHITE);//VERSION DRAWING
-	////DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
-	//DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
-	//DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
-	//if (spaceShip.isDeath == false)
-	//{
-	//	DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
-	//}
-
-	//if (car.bulletActive == true)
-	//{
-	//	DrawRectangle(static_cast<int>(car.bullet.x),
-	//		static_cast<int>(car.bullet.y),
-	//		static_cast<int>(car.bullet.width),
-	//		static_cast<int>(car.bullet.height),
-	//		RED);
-	//}
-
-	//loseText();
-
-	////---------------------------------------------------------------------------
-	//EndDrawing();
+	
 
 
 
@@ -317,7 +289,8 @@ void CreditsWindow()
 	
 	DrawText("Codigo continuado por: Leonardo Brizuela", GetScreenWidth() / 2 - 250, GetScreenHeight() / 2 - 100, 25, BLACK);//VERSION DRAWING
 	DrawText("Imagenes: Felipe Berazain", GetScreenWidth() / 2 - 250, GetScreenHeight() / 2 - 50, 25, BLACK);//VERSION DRAWING
-	DrawText("(B) Back", GetScreenWidth()/2-260, GetScreenHeight()/2+200, 25, BLACK);//VERSION DRAWING
+	DrawText("Creado con: Dalle 2", GetScreenWidth() / 2 - 250, GetScreenHeight() / 2 - 25, 25, BLACK);//VERSION DRAWING
+	DrawText("(B) Back", GetScreenWidth()/2-260, GetScreenHeight()/2+200, 30, BLACK);//VERSION DRAWING
 	EndDrawing();
 
 	if (IsKeyDown(KEY_B))
