@@ -48,6 +48,37 @@ void Update()
 
 void UpdateMultiPlayer()
 {
+	//backMenu();
+	//if (IsKeyPressed('P') || IsKeyPressed('p') || IsKeyPressed(KEY_ESCAPE))
+	//{
+
+	//	pause = !pause;
+
+	//}
+
+	//if (car.lives != 0)
+	//{
+
+	//	if (pause == true)
+	//	{
+	//		framesCounter++;
+	//		moveParallax();
+	//		/*hasCollided();*/
+	//		loseCondition();
+	//		playerMovement();
+	//		playerInput();
+	//		moveObstacle();
+	//		playerCollition(car, obstacle);
+	//		CollitionSpaceship(car, spaceShip);
+
+	//		MoveSpaceShip(/*spaceShip*/);
+
+	//	}
+	//}
+	//else
+	//{
+	//	loseText();
+	//}
 	backMenu();
 	if (IsKeyPressed('P') || IsKeyPressed('p') || IsKeyPressed(KEY_ESCAPE))
 	{
@@ -56,7 +87,7 @@ void UpdateMultiPlayer()
 
 	}
 
-	if (car.lives != 0||carPlayer2.lives!=0)
+	if (car.lives != 0&&carPlayer2.lives!=0)
 	{
 
 		
@@ -78,7 +109,7 @@ void UpdateMultiPlayer()
 	}
 	else
 	{
-		pause = false;
+		
 		loseText();
 		
 	}
@@ -93,7 +124,7 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	
  	drawParallax(background, foreground);
 	DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	DrawText("Version 0.5", 2, 2, 20, WHITE);//VERSION DRAWING
+	DrawText("Version 1.0", 2, 2, 20, WHITE);//VERSION DRAWING
 	DrawText(TextFormat("Points:%4i",car.points), 230,2, 20, WHITE);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
@@ -120,21 +151,54 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 }
 void DrawingMultiplayer(Texture2D& background,Texture2D& foreground)
 {
+
+	//BeginDrawing();
+
+	//ClearBackground(DARKBLUE);
+	////---------------------------------------------------------------------------
+
+	//drawParallax(background, foreground);
+	//DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
+	//DrawText("Version 1.0", 2, 2, 20, WHITE);//VERSION DRAWING
+	//DrawText(TextFormat("Points:%4i", car.points), 230, 2, 20, WHITE);//VERSION DRAWING
+	////DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
+	//DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
+	//DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
+	//if (spaceShip.isDeath == false)
+	//{
+	//	DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+	//}
+
+	//if (car.bulletActive == true)
+	//{
+	//	DrawRectangle(static_cast<int>(car.bullet.x),
+	//		static_cast<int>(car.bullet.y),
+	//		static_cast<int>(car.bullet.width),
+	//		static_cast<int>(car.bullet.height),
+	//		RED);
+	//}
+
+	//loseText();
+
+	////---------------------------------------------------------------------------
+	//EndDrawing();
+
+
+
+
+
 	BeginDrawing();
 
 	ClearBackground(DARKBLUE);
 	//---------------------------------------------------------------------------
-	if (menu == MenuScenes::Credits)
-	{
-		CreditsWindow();
-	}
+	
 
 	drawParallax(background, foreground);
-	//DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	DrawText(TextFormat("LIVES:%i", carPlayer2.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", carPlayer2.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	DrawText("Version 0.5", 2, 2, 20, WHITE);//VERSION DRAWING
+	DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
+	DrawText(TextFormat("LIVES:%i", carPlayer2.lives),460, 40, 20, WHITE);//LIVES DRAWING
+	DrawText("Version 1.0", 2, 2, 20, WHITE);//VERSION DRAWING
 	DrawText(TextFormat("Points:%4i", car.points), 230, 2, 20, WHITE);//VERSION DRAWING
-	//DrawText(TextFormat("Points:%4i", carPlayer2.points), 200, 2, 20, WHITE);//VERSION DRAWING
+	DrawText(TextFormat("Points:%4i", carPlayer2.points), 230, 40, 20, WHITE);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(carPlayer2.rec, GREEN);//CAR DRAWING
@@ -211,6 +275,7 @@ void loseText()
 
 		if (IsKeyDown(KEY_R))
 		{
+			
 			initializeAll();
 		}
 	}
@@ -251,6 +316,7 @@ void CreditsWindow()
 	DrawText("Fork: Felipe Berazain", GetScreenWidth()/2-260, GetScreenHeight() / 2 - 200, 45, BLACK);//VERSION DRAWING
 	
 	DrawText("Codigo continuado por: Leonardo Brizuela", GetScreenWidth() / 2 - 250, GetScreenHeight() / 2 - 100, 25, BLACK);//VERSION DRAWING
+	DrawText("Imagenes: Felipe Berazain", GetScreenWidth() / 2 - 250, GetScreenHeight() / 2 - 50, 25, BLACK);//VERSION DRAWING
 	DrawText("(B) Back", GetScreenWidth()/2-260, GetScreenHeight()/2+200, 25, BLACK);//VERSION DRAWING
 	EndDrawing();
 
