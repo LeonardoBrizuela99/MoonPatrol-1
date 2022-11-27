@@ -91,15 +91,15 @@ void Drawing(Texture2D& background, Texture2D& foreground)
 	
  	drawParallax(background, foreground);
 	DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, WHITE);//LIVES DRAWING
-	DrawText("Version 0.2", 2, 2, 20, WHITE);//VERSION DRAWING
-	//DrawText(TextFormat("Points:%4i",car.points), 230,2, 20, WHITE);//VERSION DRAWING
+	DrawText("Version 0.3", 2, 2, 20, WHITE);//VERSION DRAWING
+	DrawText(TextFormat("Points:%4i",car.points), 230,2, 20, WHITE);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
-	//if (spaceShip.isDeath==false)
-	//{
-	//	DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
-	//}
+	if (spaceShip.isDeath==false)
+	{
+		DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+	}
 
 	if (car.bulletActive == true)
 	{

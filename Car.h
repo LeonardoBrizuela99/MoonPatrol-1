@@ -15,7 +15,7 @@ struct Car
 	float maxJump;
 	int points;
 };
-extern Car car/*, carPlayer2*/;
+extern Car car, carPlayer2;
 //extern Car carPlayer2;
 
 

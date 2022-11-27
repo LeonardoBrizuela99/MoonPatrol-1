@@ -15,7 +15,7 @@ void initializeCar()
 	car.isJumping = true;
 	car.points = 0;
 
-	/*car.bulletActive = false;
+	car.bulletActive = false;
 	car.bullet.x = car.rec.x;
 	car.bullet.x = car.rec.y;
 	car.bullet.width = 10;
@@ -38,7 +38,7 @@ void initializeCar()
 	carPlayer2.bullet.x = car.rec.x;
 	carPlayer2.bullet.x = car.rec.y;
 	carPlayer2.bullet.width = 10;
-	carPlayer2.bullet.height = 10;*/
+	carPlayer2.bullet.height = 10;
 
 }
 
@@ -74,7 +74,7 @@ void playerInput()
 		car.speed.x = 0;
 	}
 
-	/*if (IsKeyPressed(KEY_W))
+	if (IsKeyPressed(KEY_W))
 	{
 		if (carPlayer2.bulletActive == false)
 		{
@@ -102,7 +102,7 @@ void playerInput()
 	else if (!carPlayer2.isJumping)
 	{
 		carPlayer2.speed.x = 0;
-	}*/
+	}
 
 }
 
@@ -111,8 +111,8 @@ void playerMovement()
 	car.rec.x += car.speed.x * GetFrameTime();
 	car.rec.y += car.speed.y * GetFrameTime();
 
-	/*carPlayer2.rec.x += carPlayer2.speed.x * GetFrameTime();
-	carPlayer2.rec.y += carPlayer2.speed.y * GetFrameTime();*/
+	carPlayer2.rec.x += carPlayer2.speed.x * GetFrameTime();
+	carPlayer2.rec.y += carPlayer2.speed.y * GetFrameTime();
 
 	if (car.bulletActive == true)
 	{
@@ -149,7 +149,7 @@ void playerMovement()
 
 
 
-	/*if (carPlayer2.bulletActive == true)
+	if (carPlayer2.bulletActive == true)
 	{
 		carPlayer2.bullet.y -= 800 * GetFrameTime();
 	}
@@ -178,7 +178,7 @@ void playerMovement()
 	if (carPlayer2.rec.x > GetScreenWidth() - carPlayer2.rec.width)
 	{
 		carPlayer2.rec.x = GetScreenWidth() - carPlayer2.rec.width;
-	}*/
+	}
 
 	
 }
@@ -197,21 +197,21 @@ void playerCollition(Car& car, Obstacle& osbtacle)
 	}
 
 }
-//void player2Collition(Car& carPlayer2, Obstacle& osbtacle)
-//{
-//	if (CheckCollisionRecs(carPlayer2.rec, obstacle.rec))
-//	{
-//		carPlayer2.lives--;
-//		initializeObstacle();
-//
-//	}
-//	else if (car.isJumping == true && obstacle.collition == false && obstacle.rec.x <= carPlayer2.rec.x && obstacle.rec.y <= carPlayer2.rec.y)
-//	{
-//		carPlayer2.points += 10;
-//		
-//	}
-//
-//}
+void player2Collition(Car& carPlayer2, Obstacle& osbtacle)
+{
+	if (CheckCollisionRecs(carPlayer2.rec, obstacle.rec))
+	{
+		carPlayer2.lives--;
+		initializeObstacle();
+
+	}
+	else if (car.isJumping == true && obstacle.collition == false && obstacle.rec.x <= carPlayer2.rec.x && obstacle.rec.y <= carPlayer2.rec.y)
+	{
+		carPlayer2.points += 10;
+		
+	}
+
+}
 
 //bool bulletCar()
 //{

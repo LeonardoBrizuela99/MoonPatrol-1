@@ -9,7 +9,7 @@
 #include "SpaceShips.h"
 
 SpaceShips spaceShip;
-Car car/*, carPlayer2*/;
+Car car, carPlayer2;
 Obstacle obstacle;
 MenuScenes menu;
 Buttons Texto[3];
