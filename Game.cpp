@@ -46,8 +46,50 @@ void Drawing(/*Texture2D& background,*/ Texture2D& foreground)
 	DrawText(TextFormat("Points:%4i",car.points), 230,2, 20, BLACK);//VERSION DRAWING
 	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
 	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
+	DrawRectangleRec(carPlayer2.rec, GREEN);//CAR DRAWING
 	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
 	if (spaceShip.isDeath==false)
+	{
+		DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
+	}
+
+	if (car.bulletActive == true)
+	{
+		DrawRectangle(static_cast<int>(car.bullet.x),
+			static_cast<int>(car.bullet.y),
+			static_cast<int>(car.bullet.width),
+			static_cast<int>(car.bullet.height),
+			RED);
+	}
+
+	if (carPlayer2.bulletActive == true)
+	{
+		DrawRectangle(static_cast<int>(carPlayer2.bullet.x),
+			static_cast<int>(carPlayer2.bullet.y),
+			static_cast<int>(carPlayer2.bullet.width),
+			static_cast<int>(carPlayer2.bullet.height),
+			BLUE);
+	}
+
+
+	//---------------------------------------------------------------------------
+	EndDrawing();
+
+}
+void DrawingMultiplayer(/*Texture2D& background,*/ Texture2D& foreground)
+{
+	BeginDrawing();
+
+	ClearBackground(RAYWHITE);
+	//---------------------------------------------------------------------------
+	drawParallax(/*background,*/ foreground);
+	DrawText(TextFormat("LIVES:%i", car.lives), GetScreenWidth() - MeasureText(TextFormat("LIVES:%i", car.lives), 20), 2, 20, BLACK);//LIVES DRAWING
+	DrawText("Version 0.1", 2, 2, 20, BLACK);//VERSION DRAWING
+	DrawText(TextFormat("Points:%4i", car.points), 230, 2, 20, BLACK);//VERSION DRAWING
+	//DrawRectangleRec(foreGround.rec, GREEN);//PARALLAX DRAWING
+	DrawRectangleRec(car.rec, BLUE);//CAR DRAWING
+	DrawRectangleRec(obstacle.rec, RED);//OBSTACLE DRAWING
+	if (spaceShip.isDeath == false)
 	{
 		DrawRectangleRec(spaceShip.pos, RED);//OBSTACLE DRAWING
 	}
@@ -69,6 +111,7 @@ void Drawing(/*Texture2D& background,*/ Texture2D& foreground)
 void UpdateMenu()
 {
 	checkPlay();
+	checkMultiPlayer();
 	checkCredits();
 	checkQuit();
 }

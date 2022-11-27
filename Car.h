@@ -15,7 +15,9 @@ struct Car
 	float maxJump;
 	int points;
 };
-extern Car car;
+extern Car car, carPlayer2;
+//extern Car carPlayer2;
+
 
 void initializeCar();
 void playerInput();

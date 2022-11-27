@@ -8,16 +8,16 @@ using namespace std;
 void initializeSpaceShip()
 {
 	spaceShip.pos.x = 0;
-	spaceShip.pos.y =  GetScreenHeight() / 8 * 6 - 400;
-	spaceShip.pos.width = 30;
-	spaceShip.pos.height = 30;
+	spaceShip.pos.y =  GetScreenHeight() / 8.0f * 6.0f - 400.0f;
+	spaceShip.pos.width = 30.0f;
+	spaceShip.pos.height = 30.0f;
 	spaceShip.isDeath = false;
 
 }
 
 void MoveSpaceShip()
 {
-	spaceShip.pos.x += 100 * GetFrameTime();
+	spaceShip.pos.x += 100.0f * GetFrameTime();
 	spaceShip.pos.y -= sin(spaceShip.pos.x / 10) * GetFrameTime() * 600.0f;
 
 	if (spaceShip.pos.x>=GetScreenWidth()+spaceShip.pos.width*2&&spaceShip.isDeath==false)

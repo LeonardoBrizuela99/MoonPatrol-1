@@ -34,6 +34,8 @@ void initializeTexts();
 void drawButtons();
 void drawPlay();
 void checkPlay();
+void drawMultiPlayer();
+void checkMultiPlayer();
 void drawCredits();
 void checkCredits();
 void drawQuit();

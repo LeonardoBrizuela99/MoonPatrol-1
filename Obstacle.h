@@ -4,6 +4,7 @@
 struct Obstacle
 {
 	Rectangle rec;
+	bool collition = false;
 	float speed;
 };
 extern Obstacle obstacle;

@@ -9,7 +9,7 @@
 #include "SpaceShips.h"
 
 SpaceShips spaceShip;
-Car car;
+Car car, carPlayer2;
 Obstacle obstacle;
 MenuScenes menu;
 Buttons Texto[3];
@@ -26,8 +26,8 @@ int main(void)
 	const int screenHeight = 810;
 	InitWindow(screenWidth, screenHeight, "MoonPatrol");
 
-	Texture2D background = LoadTexture("resources/CloudTexture.png");
-	Texture2D foreground = LoadTexture("resources/TerrainTexture.png");
+	Texture2D background = LoadTexture("CloudTexture.png");
+	Texture2D foreground = LoadTexture("TerrainTexture.png");
 	
 	SetTargetFPS(60);
 
