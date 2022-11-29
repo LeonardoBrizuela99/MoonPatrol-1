@@ -1,5 +1,5 @@
 #pragma once
-#include <raylib.h>
+#include "..\..\libs\raylib\include\raylib.h"
 #include "Obstacle.h"
 
 struct Car

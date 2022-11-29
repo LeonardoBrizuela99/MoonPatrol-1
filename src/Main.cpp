@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
-#include <raylib.h>
+//#include <raylib.h>
+#include "..\libs\raylib\include\raylib.h"
 #include "Game.h"
-#include "Car.h"
-#include "MainMenu.h"
-#include "Obstacle.h"
-#include "Parallax.h"
-#include "SpaceShips.h"
+#include "objetos/Car.h"
+#include "menu/MainMenu.h"
+#include "objetos/Obstacle.h"
+#include "parallax/Parallax.h"
+#include "objetos/SpaceShips.h"
 
 SpaceShips spaceShip;
 Car car, carPlayer2;
